@@ -2,8 +2,13 @@ import { StyleSheet, Text, View,Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 import {colors} from '../utils/colors';
 import {fonts} from '../utils/fonts';
+import { useNavigation } from '@react-navigation/native';
 
 const HomeScreen = () => {
+   const navigation = useNavigation();
+   const handleLogin = () =>{
+         navigation.navigate('LOGIN');
+   }
   return (
     <View style ={styles.container}>
      <Image source={require('../assets/Logo.jpg')}style ={styles.logo}/>
@@ -14,7 +19,9 @@ const HomeScreen = () => {
      <View style ={styles.buttonContainer}>
          <TouchableOpacity style ={[styles.employeebuttonwrapper,{
             backgroundColor:colors.primary
-         },]}>
+         },]}
+            onPress={handleLogin}
+         >
             <Text  style ={styles.employeebuttontext}>Employee</Text>
          </TouchableOpacity>
          <TouchableOpacity style={[styles.employeebuttonwrapper]}>
