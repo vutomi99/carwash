@@ -8,7 +8,10 @@ const HomeScreen = () => {
    const navigation = useNavigation();
    const handleLogin = () =>{
          navigation.navigate('LOGIN');
-   }
+   };
+   const handleClient = () =>{
+      navigation.navigate('CLIENT');
+};
   return (
     <View style ={styles.container}>
      <Image source={require('../assets/Logo.jpg')}style ={styles.logo}/>
@@ -24,8 +27,10 @@ const HomeScreen = () => {
          >
             <Text  style ={styles.employeebuttontext}>Employee</Text>
          </TouchableOpacity>
-         <TouchableOpacity style={[styles.employeebuttonwrapper]}>
+         <TouchableOpacity style={[styles.employeebuttonwrapper]}
+           onPress = {handleClient}>
             <Text style ={styles.clientButtonText} >Client</Text>
+          
          </TouchableOpacity>
      </View>
     </View>
